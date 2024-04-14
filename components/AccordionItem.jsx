@@ -9,7 +9,7 @@ const AccordionItem = ({title,info}) => {
     <div className={`accordion-item ${showInfo && "accordion-item--active"}`} onClick={()=>setShowInfo(!showInfo)}>
       <div className="accordion-item--header">
           <h4>{title}</h4>
-          <button className="accordion-item--header__btn" role="dropdown" aria-label="accordion dropdown toggle" >
+          <button className="accordion-item--header__btn" aria-label="accordion dropdown toggle" >
             <img src={`${showInfo?iconMinus:iconPlus}`} alt="" />
           </button>
       </div>

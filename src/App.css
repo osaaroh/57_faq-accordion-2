@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, 
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  /* ## Colors */
+
+  /* ### Primary */
+  
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --grayish-purple-box-shadow: hsla(293, 16%, 49%, 0.3);
+  --very-light-grayish-purple: hsla(293, 16%, 49%, 0.2);
+  --dark-purple: hsl(292, 42%, 14%);
+
+
+  /* ### Secondary */
+  --purple-accent: #ad28eb;
+
+
+    /* ## Font */
+  --Font-size: 14px;
+  --Font-family: "Work Sans", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--grayish-purple);
+  background-color: var(--light-pink);
+  font-family: var(--Font-family);
+  font-size: var(--Font-size);
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  background-image: url(../assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35%;
+  max-height: 500px;
+  left: 0;
+  top: 0;
+}
+
+h1, h2, h3, h4, h5{
+  color: var(--dark-purple);
+  font-weight: 700;
+}
+
+h1{
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+h1::before{
+  content: '';
+  display: block;
+  background-image: url(../assets/images/icon-star.svg);
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+}
+
+.card{
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 2px 5px 47px 4px var(--grayish-purple-box-shadow);
+  z-index: 2;
+  position: relative;
+}
+
+@media screen and (max-width: 520px) {
+  .card{
+    margin: 1rem;
+  }
+}
+/* ======== FAQ Section =========  */
+
+
+.section__accordion{
+  width: 100%;
+  max-width: 500px;
+}
+
+.accordion-item{
+  /* padding-bottom: 0.5rem; */
+}
+.accordion-item:not(:last-child)::after{
+  content: "";
+  display: block;
+  border-top: 1px solid var(--very-light-grayish-purple);
+}
+.accordion-item--header{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.accordion-item h4 {
+    margin: 1rem 0;
+}
+.accordion-item:hover h4 {
+    color: var(--purple-accent);
+}
+.accordion-item--text{
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+.accordion-item--text p{
+    line-height: 1.85rem;
+}
+
+
+.accordion-item--header__btn{
+  position: relative;
+  background: none;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  transition: all .3s;
+}
+.accordion-item--active .accordion-item--header__btn{
+  transform: rotate(180deg);
+}
